@@ -56,9 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MazeSpawner.cs" />
-    <Compile Include="Assets\Scripts\MazeGenerator.cs" />
-    <Compile Include="Assets\Scripts\Point.cs" />
+    <Compile Include="Assets\Scripts\Maze\Point.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Maze\MazeSpawner.cs" />
+    <Compile Include="Assets\Scripts\Maze\Trap.cs" />
+    <Compile Include="Assets\Scripts\Maze\MazeGenerator.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -318,6 +321,9 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="NavMeshComponentsEditor">
+      <HintPath>Library\ScriptAssemblies\NavMeshComponentsEditor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Notifications.Android">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.Android.dll</HintPath>
@@ -714,6 +720,10 @@
     <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
       <Project>{43FEEADE-94B6-468A-62BE-EA3424C9D357}</Project>
       <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{C0A0F818-D062-358D-2FE4-6B1E2B5E268C}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{B9750B5F-9AD9-A768-E8C2-6F27FB485906}</Project>

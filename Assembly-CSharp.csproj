@@ -56,9 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\MazeSpawner.cs" />
-    <Compile Include="Assets\Scripts\MazeGenerator.cs" />
-    <Compile Include="Assets\Scripts\Point.cs" />
+    <Compile Include="Assets\Scripts\Maze\Point.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Maze\MazeSpawner.cs" />
+    <Compile Include="Assets\Scripts\Maze\Trap.cs" />
+    <Compile Include="Assets\Scripts\Maze\MazeGenerator.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -757,6 +760,10 @@
       <Project>{75394497-2CDB-5801-3899-54F9237B9A0B}</Project>
       <Name>Unity.2D.SpriteShape.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="NavMeshComponentsEditor.csproj">
+      <Project>{52143142-E748-0343-4038-1A5FFD6AA64F}</Project>
+      <Name>NavMeshComponentsEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.Notifications.Android.csproj">
       <Project>{5508D84E-4B09-EE2A-04F8-7A94B6EE3304}</Project>
       <Name>Unity.Notifications.Android</Name>
@@ -764,6 +771,10 @@
     <ProjectReference Include="Unity.2D.Common.Editor.csproj">
       <Project>{3264E054-1B74-C683-8B96-8B6C4C1EF0A2}</Project>
       <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="NavMeshComponents.csproj">
+      <Project>{C0A0F818-D062-358D-2FE4-6B1E2B5E268C}</Project>
+      <Name>NavMeshComponents</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
       <Project>{B9750B5F-9AD9-A768-E8C2-6F27FB485906}</Project>
