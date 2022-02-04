@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-public class MazeGeneratedPoints
+public class MazeGeneratedPoints : MonoBehaviour
 {
     public int X;
     public int Y;
@@ -12,7 +12,7 @@ public class MazeGeneratedPoints
     public bool isVisited = false;
 }
 
-public class MazeGenerator
+public class MazeGenerator : MonoBehaviour
 {
     public int Width;
     public int Height;

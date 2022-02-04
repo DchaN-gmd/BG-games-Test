@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Trap : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Trap : MonoBehaviour
 
     public bool _isTrapZone = false;
 
-    void Start()
+    public UnityEvent playerDied;
+
+    private void Start()
     {
         if(_isTrapZone)
         {
@@ -23,6 +26,7 @@ public class Trap : MonoBehaviour
            if(player.GetComponent<Player>()._isProtected == false)
            {
                 Destroy(other.gameObject);
+                //playerDied?.Invoke();
            }
         }
     }

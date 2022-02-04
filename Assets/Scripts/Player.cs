@@ -5,8 +5,6 @@ using UnityEngine.AI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private MazeSpawner _spawner;
-
     [Header("Timer")]
     [SerializeField] private float _timeToStart;
     [SerializeField] private float _timeToResetProtect;
@@ -17,17 +15,29 @@ public class Player : MonoBehaviour
 
     private NavMeshAgent _navMeshOfPlayer;
     private Renderer _playerColor;
+    private MazeSpawner _mazeSpawner;
+
     private Vector3 _finishPoint;
     private float _timer;
     private bool _isStart = false;
 
     public bool _isProtected = false;
 
-    private void Start()
+    private void Awake()
     {
         _navMeshOfPlayer = GetComponent<NavMeshAgent>();
-        _finishPoint = _spawner.GetFinishPoint.transform.position;
         _playerColor = GetComponent<Renderer>();
+        _mazeSpawner = FindObjectOfType<MazeSpawner>().GetComponent<MazeSpawner>();
+    }
+
+    private void OnEnable()
+    {
+        _mazeSpawner._finishPointSpawned.AddListener(OnFinishSpawned);
+    }
+
+    private void OnDisable()
+    {
+        _mazeSpawner._finishPointSpawned.RemoveListener(OnFinishSpawned);      
     }
 
     private void Update()
@@ -82,4 +92,10 @@ public class Player : MonoBehaviour
         if (_isProtected) _playerColor.material.color = _targetColorOfProtect.color;
         if (!_isProtected) _playerColor.material.color = _defaultPlayerColor.color;
     }
+
+    private void OnFinishSpawned(GameObject finish)
+    {
+        _finishPoint = finish.transform.position;
+    }
+
 }
